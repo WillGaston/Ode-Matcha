@@ -18,7 +18,25 @@ public class Diary {
   private boolean separation;
   private String photo;
   private String notes;
-  
+
+  public Diary(LocalDate date, String matchaType, int matchaAmount, int waterAmount, int milkAmount, String milkType, int sweetenerAmount, String sweetenerType, int iceAmount, String colour, int colourRating, int tasteRating, boolean separation, String photo, String notes) {
+    setDate(date);
+    setMatchaType(matchaType);
+    setMatchaAmount(matchaAmount);
+    setWaterAmount(waterAmount);
+    setMilkAmount(milkAmount);
+    setMilkType(milkType);
+    setSweetenerAmount(sweetenerAmount);
+    setSweetenerType(sweetenerType);
+    setIceAmount(iceAmount);
+    setColour(colour);
+    setColourRating(colourRating);
+    setTasteRating(tasteRating);
+    setSeparation(separation);
+    setPhoto(photo);
+    setNotes(notes);
+  }
+
   public LocalDate getDate() {
     return date;
   }
