@@ -2,7 +2,7 @@ package Ode_Matcha.Diary_Items;
 
 import java.time.LocalDate;
 
-public class Diary {
+public class DiaryEntry {
   private LocalDate date;
   private String matchaType;
   private int matchaAmount;
@@ -11,6 +11,7 @@ public class Diary {
   private String milkType;
   private int sweetenerAmount;
   private String sweetenerType;
+  private boolean iceUsed;
   private int iceAmount;
   private String colour;
   private int colourRating;
@@ -19,7 +20,7 @@ public class Diary {
   private String photo;
   private String notes;
 
-  public Diary(LocalDate date, String matchaType, int matchaAmount, int waterAmount, int milkAmount, String milkType, int sweetenerAmount, String sweetenerType, int iceAmount, String colour, int colourRating, int tasteRating, boolean separation, String photo, String notes) {
+  public DiaryEntry(LocalDate date, String matchaType, int matchaAmount, int waterAmount, int milkAmount, String milkType, int sweetenerAmount, String sweetenerType, boolean iceUsed, int iceAmount, String colour, int colourRating, int tasteRating, boolean separation, String photo, String notes) {
     setDate(date);
     setMatchaType(matchaType);
     setMatchaAmount(matchaAmount);
@@ -28,6 +29,7 @@ public class Diary {
     setMilkType(milkType);
     setSweetenerAmount(sweetenerAmount);
     setSweetenerType(sweetenerType);
+    setIceUsed(iceUsed);
     setIceAmount(iceAmount);
     setColour(colour);
     setColourRating(colourRating);
@@ -99,6 +101,14 @@ public class Diary {
 
   public void setSweetenerType(String sweetenerType) {
     this.sweetenerType = sweetenerType;
+  }
+
+  public boolean getIceUsed() {
+    return iceUsed;
+  }
+
+  public void setIceUsed(boolean iceUsed) {
+    this.iceUsed = iceUsed;
   }
 
   public int getIceAmount() {

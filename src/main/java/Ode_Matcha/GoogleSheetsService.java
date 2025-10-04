@@ -12,6 +12,8 @@ import com.google.api.services.sheets.v4.model.ValueRange;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 
+import Ode_Matcha.Diary_Items.DiaryEntry;
+
 public class GoogleSheetsService {
   private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
   private static final String APPLICATION_NAME = "Ode-Matcha Logger";
@@ -33,21 +35,21 @@ public class GoogleSheetsService {
   }
 
   // Read all rows
-  public static List<List<Object>> readData() throws Exception {
+  public static List<DiaryEntry> readData() throws Exception {
     Sheets service = getSheetsService();
     ValueRange response = service.spreadsheets().values().get(SPREADSHEET_ID, RANGE).execute();
-    return response.getValues();
+    return MatchaMapper.rowsToMatcha(response.getValues());
   }
 
     // Append a new row
-  public static void appendRow(List<Object> rowData) throws Exception {
+  public static void appendRow(DiaryEntry rowData) throws Exception {
     Sheets service = getSheetsService();
-    ValueRange body = new ValueRange().setValues(Collections.singletonList(rowData));
+    ValueRange body = new ValueRange().setValues(Collections.singletonList(MatchaMapper.matchaToRow(rowData)));
     service.spreadsheets().values().append(SPREADSHEET_ID, RANGE, body).setValueInputOption("RAW").execute();
   }
 
   public static void main(String[] args) throws Exception {
-    List<List<Object>> rows = GoogleSheetsService.readData();
+    List<DiaryEntry> rows = GoogleSheetsService.readData();
     rows.forEach(row -> System.out.println(row));
   }
 }
