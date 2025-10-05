@@ -160,6 +160,7 @@
     font-family: "Roboto";
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .matcha-svg {
@@ -172,8 +173,96 @@
     width: 1px;
     flex-shrink: 0;
     background-color: black;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-.card-div {
-    width: 47%;
+.card-div-left {
+    width: 39%;
+}
+
+.card-div-right {
+    width: 57%;
+    padding: 10px;
+}
+
+.details-button:hover {
+    background-color: #007200;
+    color: white;
+}
+
+.details-button {
+    background-color: white;
+    width: 40%;
+    height: 40px;
+    border-radius: 1em;
+    border: 1px solid #007200;
+    color: #007200;
+    margin-left: 60%;
+    cursor: pointer;
+}
+
+.details-button:hover {
+    background-color: #007200;
+    color: white;
+}
+
+.popup-div {
+    width: 30%;
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+.popup-close {
+    position: absolute;
+    bottom: 10px;
+    width: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5em 1em;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 1em;
+    color: red;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background-color: red;
+    color: white;
+}
+
+.popup-div p {
+  margin: 6px 0;
+  font-size: 1em;
+  line-height: 1.4;
+  color: #333;
+}
+
+.popup-div p b {
+  color: #2f6f4e;
+  font-weight: 600;
+}
+
+.popup-div h2 {
+  margin-bottom: 12px;
+  color: #1b4d2c;
+  font-size: 1.2em;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+.popup-div h3 {
+  color: #1b4d2c;
+  font-size: 1em;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  margin-top: 5px;
 }
